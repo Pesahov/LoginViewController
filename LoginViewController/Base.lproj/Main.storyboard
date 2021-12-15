@@ -123,6 +123,10 @@
                             <constraint firstItem="1iS-wr-Scw" firstAttribute="trailing" secondItem="8TG-JW-txF" secondAttribute="trailing" constant="178" id="s4E-2B-kWE"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="label" destination="8TG-JW-txF" id="qXP-yw-DJm"/>
+                        <outlet property="logout" destination="Qr2-nF-rQd" id="yNG-Nf-gWZ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pGl-Oh-Tlu" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
