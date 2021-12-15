@@ -40,6 +40,9 @@
                                         <buttonConfiguration key="configuration" style="plain" title="Forgot User Name?">
                                             <fontDescription key="titleFontDescription" type="boldSystem" pointSize="9"/>
                                         </buttonConfiguration>
+                                        <connections>
+                                            <action selector="forgotUserName:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ofN-E7-jBw"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jPH-S2-Zcd">
                                         <rect key="frame" x="161" y="0.0" width="140" height="25"/>
@@ -47,6 +50,9 @@
                                         <buttonConfiguration key="configuration" style="plain" title="Forgot Password?">
                                             <fontDescription key="titleFontDescription" type="boldSystem" pointSize="9"/>
                                         </buttonConfiguration>
+                                        <connections>
+                                            <action selector="forgotPassword:" destination="BYZ-38-t0r" eventType="touchUpInside" id="hkx-hJ-CcF"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>
@@ -57,7 +63,7 @@
                                     <fontDescription key="titleFontDescription" type="boldSystem" pointSize="22"/>
                                 </buttonConfiguration>
                                 <connections>
-                                    <segue destination="GFZ-ry-ZyE" kind="presentation" id="dlq-5A-uNI"/>
+                                    <segue destination="GFZ-ry-ZyE" kind="presentation" identifier="goToWelcome" id="dlq-5A-uNI"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -74,6 +80,10 @@
                             <constraint firstItem="Fdw-bh-Hg6" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="60" id="whH-61-9Tk"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="password" destination="VOE-iQ-0mQ" id="Alh-8r-IVj"/>
+                        <outlet property="username" destination="GqV-wt-au7" id="C4n-dt-QUF"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -87,23 +97,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="34" translatesAutoresizingMaskIntoConstraints="NO" id="PhP-TL-WJr">
-                                <rect key="frame" x="103" y="173" width="208" height="24"/>
-                                <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome," textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="qnd-iU-GWr">
-                                        <rect key="frame" x="0.0" y="0.0" width="87" height="24"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="lta-b0-wTz">
-                                        <rect key="frame" x="121" y="0.0" width="87" height="24"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                </subviews>
-                            </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qr2-nF-rQd">
                                 <rect key="frame" x="137" y="692" width="126" height="32"/>
                                 <state key="normal" title="Button"/>
@@ -111,17 +104,23 @@
                                     <fontDescription key="titleFontDescription" type="boldSystem" pointSize="15"/>
                                 </buttonConfiguration>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8TG-JW-txF">
+                                <rect key="frame" x="186" y="150" width="50" height="26"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="1iS-wr-Scw"/>
                         <color key="backgroundColor" systemColor="systemPurpleColor"/>
                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="1iS-wr-Scw" firstAttribute="trailing" secondItem="Qr2-nF-rQd" secondAttribute="trailing" constant="151" id="90i-jt-kB2"/>
-                            <constraint firstItem="1iS-wr-Scw" firstAttribute="trailing" secondItem="PhP-TL-WJr" secondAttribute="trailing" constant="103" id="B8I-0L-i0g"/>
-                            <constraint firstItem="PhP-TL-WJr" firstAttribute="leading" secondItem="1iS-wr-Scw" secondAttribute="leading" constant="103" id="EHs-2Y-o2e"/>
+                            <constraint firstItem="8TG-JW-txF" firstAttribute="top" secondItem="1iS-wr-Scw" secondAttribute="top" constant="106" id="LAp-WM-laA"/>
+                            <constraint firstItem="8TG-JW-txF" firstAttribute="leading" secondItem="1iS-wr-Scw" secondAttribute="leading" constant="186" id="LHL-xz-tew"/>
                             <constraint firstItem="Qr2-nF-rQd" firstAttribute="leading" secondItem="1iS-wr-Scw" secondAttribute="leading" constant="137" id="OXv-jx-PGO"/>
-                            <constraint firstItem="PhP-TL-WJr" firstAttribute="top" secondItem="1iS-wr-Scw" secondAttribute="top" constant="129" id="Vvq-PH-2yB"/>
                             <constraint firstItem="1iS-wr-Scw" firstAttribute="bottom" secondItem="Qr2-nF-rQd" secondAttribute="bottom" constant="138" id="Wtq-nI-U0f"/>
+                            <constraint firstItem="1iS-wr-Scw" firstAttribute="trailing" secondItem="8TG-JW-txF" secondAttribute="trailing" constant="178" id="s4E-2B-kWE"/>
                         </constraints>
                     </view>
                 </viewController>
