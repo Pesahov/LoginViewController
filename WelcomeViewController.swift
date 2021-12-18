@@ -2,14 +2,14 @@
 //  WelcomeViewController.swift
 //  LoginViewController
 //
-//  Created by Shilol Pesahov on 15/12/2021.
+//  Created by Shilol Pesahov on 18/12/2021.
 //
 
 import UIKit
 
 class WelcomeViewController: UIViewController {
     
-    @IBOutlet weak var welcomeLabel: UILabel!
+    @IBOutlet var welcomeLabel: UILabel!
     
     var validUserName = ""
     
@@ -31,6 +31,7 @@ class WelcomeViewController: UIViewController {
         view.addVerticalGradientLayer(topColor: primaryColor, bottomColor: secondaryColor)
         welcomeLabel.text = "Welcome, \(validUserName)!"
     }
+
 }
 
 extension UIView {
@@ -44,4 +45,7 @@ extension UIView {
         layer.insertSublayer(gradient, at: 0)
     }
 }
+
+
+
 
